@@ -1,0 +1,99 @@
+<!--pages/room/index.wxml-->
+<layout
+  showBack="{{ true }}"
+  showTabbar="{{false}}"
+  bindnavback="navback"
+  backfun="{{true}}">
+
+  <view class="page room" style="margin-top:{{titleHeight}}rpx">
+    <view class="infos">
+      <view class="item empty"></view>
+      <view class="item roomId">房间：{{roomId}}</view>
+      <view class="item online-numbers" bindtap="showMembers">{{onlineNumbers}} 人</view>
+    </view>
+
+    <view class="player">
+
+      <liver roomId="{{roomId}}"></liver>
+
+      <view style="bottom: {{bottom}}px"  class="message-box">
+        <scroll-view scroll-y scroll-into-view="{{toView}}" style="max-height: 400rpx;">
+            <view class="ms-item"
+            wx:for="{{ messageLists }}"
+            wx:key="item"
+            wx:for-index="index"
+            id="msg-{{index}}">
+              <view class="it">
+                <text wx:if="{{item.type !== 'join' && item.type !== 'leave'}}" class="nick">{{item.nickname || item.uid}} : </text>
+                <text class="message {{item.type}}">{{item.message}}</text>
+              </view>
+            </view>
+          </scroll-view>
+      </view>
+      
+      
+    </view>
+
+
+    <view class="footer">
+      <view class="keyword" bindtap="showSendMessageBox" style="background: {{$state.theme}};">Hey~</view>
+
+      <view class="setting">
+        <block wx:if="{{ownerUID === myuid}}">
+          <view class="btn speak" bindtap="switchMute" style="border-color: {{$state.theme}}">
+            <image wx:if="{{!mute}}" src="/images/voice.jpg"></image>
+            <image wx:else src="/images/no-voice.jpeg"></image>
+          </view>
+          <view class="btn camera" bindtap="switchCamera" style="border-color: {{$state.theme}}">
+            <image wx:if="{{camerafront}}" src="/images/camera.png"></image>
+            <image wx:else src="/images/camera.png"></image>
+          </view>
+        </block>
+        <view class="btn set" style="border-color: {{$state.theme}}">
+          <button class="feedback" open-type='feedback'><image src="/images/feedback.png"></image></button>
+        </view>
+      </view>
+    </view>
+
+    <view class="sendMessage"
+      id="sendMessage"
+      wx:if="{{showSendMessage}}"
+      style="top: {{messageTop}}px">
+
+      <textarea
+      class="send_input"
+      placeholder="说点什么吧…"
+      focus="{{ showSendMessage }}"
+      bindblur="sendMessageBlur"
+      bindfocus="sendMessageFocus"
+      show-confirm-bar="{{false}}"
+      bindinput="bindinput"
+      value="{{message}}"
+      ></textarea>
+
+      <button bindtap="sendMessageToUser" class="send_btn">发送</button>
+    </view>
+  </view>
+
+  <van-popup
+    show="{{ show }}"
+    position="bottom"
+    custom-style="height: 40%;"
+    bind:close="onClose"
+  >
+    <view class="online">
+      <view class="title">在线列表</view>
+
+      <view class="list">
+        <view class="m-item" wx:for="{{onlineMembers}}" wx:key="uid">
+          <image class="avator" src="/images/avator.jpg"></image>
+          <text class="m-info {{item.type}}">{{item.info}}</text>
+        </view>
+      </view>
+    </view>
+  </van-popup>
+
+  <van-dialog id="van-dialog" />
+
+  <van-toast id="van-toast" />
+</layout>

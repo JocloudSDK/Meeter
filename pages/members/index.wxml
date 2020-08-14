@@ -1,0 +1,21 @@
+<!--pages/members/index.wxml-->
+<layout
+  activeBar="ONLINE_MEMBERS">
+
+  <view class="online page">
+      <view class="numbers">
+        总在线人数：{{totalOnlineMembers}}
+      </view>
+
+      <view class="member-list">
+        <block wx:for="{{rendermemberlists}}" wx:key="uid">
+          <view class="item {{item.isOwner ? 'isOwner' : ''}}" bindtap="goPrivate" data-uid="{{item.uid}}">
+            <image class="avator" src="/images/avator.jpg"></image>
+            <text class="nick">{{item.uid}} {{item.isOwner ? '(我)': ''}}</text>
+          </view>
+        </block>
+      </view>  
+  </view>
+
+  <van-toast id="van-toast" />
+</layout>

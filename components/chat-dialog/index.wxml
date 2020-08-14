@@ -1,0 +1,54 @@
+<!--components/chat-dialog/index.wxml-->
+
+<van-dialog
+  use-slot
+  show="{{ show }}"
+  showConfirmButton="{{false}}"
+>
+  <view class="chat">
+    <view class="label">
+      <text class="title">To：</text>
+      <input
+        class="uid-input"
+        value="{{ uid }}"
+        placeholder="用户名UID"
+        maxlength="{{ 10 }}"
+        type="digit"
+        confirm-type="done"
+        bindinput="getUID"
+      ></input>
+      <van-icon
+        wx:if="{{uid}}"
+        class="mini-icon"
+        name="close"
+        color="#333"
+        bind:click="closeUid"/>
+    </view>
+
+    <view class="label">
+      <text class="title">Message：</text>
+      <textarea
+        class="textarea"
+        value="{{ message }}"
+        placeholder="输入消息"
+        confirm-type="done"
+        bindinput="getMessage"
+        maxlength="-1"
+        fixed
+      ></textarea>
+      <van-icon
+        wx:if="{{message}}"
+        class="mini-icon"
+        name="close"
+        color="#333"
+        bind:click="closeMessage" />
+    </view>
+  </view>
+
+  <view class="footer">
+    <button class="btn cancel" bindtap="onClose">取消</button>
+    <button class="btn confirm" bindtap="onConfirm">发送</button>
+  </view>
+
+  <van-toast id="van-toast" />
+</van-dialog>

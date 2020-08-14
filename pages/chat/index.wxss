@@ -1,0 +1,74 @@
+/* pages/chat/index.wxss */
+.chat .chat-list{
+  padding: 24rpx 0;
+}
+.chat .uid {
+  color: orange;
+}
+.chat .no-data {
+  margin: 50rpx 0;
+  color: #aaa;
+}
+.chat .item {
+  display: flex;
+  align-content: center;
+  padding: 24rpx 0;
+  position: relative;
+}
+.chat .item:after {
+  position: absolute;
+  content: '';
+  height: 1rpx;
+  width: 100%;
+  background: #dcdcdc;
+  transform: scaleY(0.5);
+  bottom: 0;
+}
+.chat .item:last-child:after {
+  height: 0;
+}
+.chat .ctx {
+  flex: 1;
+  min-width: 0;
+}
+.chat .item .avator {
+  height: 80rpx;
+  width: 80rpx;
+  margin-right: 24rpx;
+  border-radius: 50%;
+}
+.chat .info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12rpx;
+}
+.chat .info .time {
+  color: #aaa;
+  font-size: 24rpx;
+  line-height: 42rpx;
+  width: 150rpx;
+}
+.chat .info .nick {
+  flex: 1;
+  min-width: 0;
+}
+.chat .msg {
+  color: #bbb;
+  word-break: break-word;
+}
+.private-btn {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 120rpx;
+  margin: auto;
+  text-align: center;
+  height: 80rpx;
+  width: 160rpx;
+  line-height: 80rpx;
+  border-radius: 16rpx;
+  background: #0049FF;
+  padding: 0 12rpx;
+  color: #fff;
+  box-shadow: 0 0 6rpx #7b87a8;
+}

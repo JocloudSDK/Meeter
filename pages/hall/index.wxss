@@ -1,0 +1,64 @@
+/* pages/hall/index.wxss */
+.page .van-button {
+  width: 100%!important;
+}
+.create-btn {
+  margin: 40rpx auto;
+}
+.context {
+  margin-top: 30%;
+}
+.moment {
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+  align-items: center;
+}
+.moment view {
+  color: orange;
+  flex: 1;
+}
+.moment .feedback {
+  width: 80rpx;
+  background: #fff;
+}
+.moment .feedback:after {
+  border: none;
+}
+.moment .van-icon {
+  font-size: 38rpx;
+  color: #333;
+}
+.form {
+  margin: 20rpx auto;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24rpx;
+}
+.logo image {
+  height: 120rpx;
+  width: 316rpx;
+  margin-bottom: 40rpx;
+}
+.logo .logotext {
+  font-size: 32rpx
+}
+.joinroom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.joinroom .van-field {
+  flex: 1;
+}
+.joinroom .input-roomid {
+  flex: 1;
+  margin-right: 24rpx;
+}
+.joinroom .add-btn {
+  width: 248rpx;
+}

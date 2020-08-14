@@ -1,0 +1,17 @@
+<!--components/liver/index.wxml-->
+<view class="canvasContainer" wx:for="{{canvas}}" wx:key="index">
+  <!-- owner -->
+  <live-pusher id="pusher" wx:if="{{item && item.uid === ownerUID && item.url}}" style="position:absolute;left:{{item.left}}px; top:{{item.top}}px; width:{{item.width}}px; height:{{item.height}}px; z-index:{{item.z_index}};" url="{{item.url}}" muted="{{muted}}"  beauty="{{beauty}}" device-position='{{frontCamera?"front":"back"}}' enable-camera="{{enable_camera}}" autopush mode="RTC">
+    <cover-view class="user-uid">
+      主播uid：{{item.uid}}（我）
+    </cover-view>
+  </live-pusher>
+  
+  <!-- 用户 -->
+  <live-player wx:elif="{{item && item.uid !== ownerUID && item.url}}" mode="RTC" id="player" style="position:absolute; left:{{item.left}}px; top:{{item.top}}px; width:{{item.width}}px; height:{{item.height}}px; z-index:{{item.z_index}};" src="{{item.url}}" muted="{{muted}}" object-fit="fillCrop" autoplay binderror="error" bindstatechange="statechange" auto-pause-if-navigate="{{false}}" auto-pause-if-open-native="{{false}}">
+    <cover-view class="user-uid">
+      <cover-view class="text">主播uid：{{ownerUID}}</cover-view>
+      <cover-view class="text">我的uid：{{item.uid}}</cover-view>
+    </cover-view>
+  </live-player>
+</view> 

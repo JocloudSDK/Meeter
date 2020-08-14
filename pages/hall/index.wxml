@@ -1,0 +1,66 @@
+<!--pages/hall/index.wxml-->
+<layout
+  title="{{title}}"
+  activeBar="MEETING">
+
+  <view class="hall page">
+
+    <view class="moment">
+      <view></view>
+      <!-- bindtap="feedback" open-type='feedback'-->
+      <button class="feedback" open-type='feedback'><van-icon name="comment-o" /></button>
+    </view>
+    
+    <view class="context">
+      <view class="logo">
+        <image class="logo-image" src="/images/logo.png"></image>
+        <text>实时音视频专家</text>
+      </view>
+
+    
+      <view class="form">
+        <!-- 请输入房间号,首位不能为0 -->
+        <view class="joinroom">
+          <van-field
+            class="input-roomid"
+            value="{{ roomId }}"
+            clearable
+            type="digit"
+            maxlength="{{8}}"
+            placeholder="最多8位数字"
+            bind:change="onChange" />
+
+          <van-button
+            class="btn add-btn"
+            type="info"
+            disabled="{{roomId === null || roomId === '' || disabled}}"
+            bindtap="joinRoom"
+            color="{{$state.theme}}">
+            加入房间 <van-loading wx:if="{{disabled}}" type="spinner" size="12"/>
+          </van-button>
+        </view>
+
+        <view class="create-btn">
+          <van-button
+            class="btn add-btn"
+            plain
+            type="info"
+            disabled="{{createDisabled}}"
+            bindtap="createRoom"
+            color="{{$state.theme}}">
+            创建房间 <van-loading wx:if="{{createDisabled}}" type="spinner" size="12"/>
+          </van-button>
+        </view>
+      </view>
+    
+    </view>
+
+    <footer footHeight="{{footHeight}}"></footer>
+  </view>
+
+   <van-toast id="van-toast" />
+</layout>
+
+
+
+

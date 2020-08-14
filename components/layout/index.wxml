@@ -1,0 +1,70 @@
+<!--components/yy-layout/index.wxml-->
+<view class="wechat-container">
+  <!-- 导航栏 -->
+  <navigation
+    title="{{title}}"
+    loading="{{loading}}"
+    menuHeight="{{menuHeight}}"
+    navBarHeight="{{navBarHeight}}"
+    showBack="{{showBack}}"
+    delta="{{delta}}"
+    bindback="back"
+    backfun="{{backfun}}"
+    >
+  </navigation>
+
+  <!-- 内容 -->
+  <scroll-view scroll-y="{{scrollEnable}}" class="bg"
+    scroll-with-animation="{{scrollAnimation}}"
+    style="height:{{contentHeight}}px;margin-top:{{titleHeight}}rpx; margin-bottom:{{showTabBar?footHeight:0}}rpx;">
+    <slot></slot>
+
+  </scroll-view>
+
+  <tabbar
+    wx:if="{{showTabbar}}"
+    activeBar="{{activeBar}}"></tabbar>
+
+  <!-- 授权弹窗 -->
+  <van-dialog
+    use-slot
+    show="{{ showAuth }}"
+    showConfirmButton="{{false}}"
+    width="280px"
+    >
+      <view class="auth">
+        <view class="title">微信小程序授权</view>
+
+        <view class="content">
+          <view>实时音视频互动</view>
+          <view>让您随时随地感受乐趣</view>
+        </view>
+
+        <view class="button">
+          <button class="btn confirm" bindgetuserinfo="getUserInfo" open-type="getUserInfo">授权微信用户信息</button>
+          <!-- <button class="btn cancle" bindtap="cancle">取消授权</button> -->
+        </view>
+      </view>
+    </van-dialog>
+
+    <!-- loading -->
+    <loading wx:if="{{loading}}" show="{{loading}}" direction="vertical"/>
+
+    <!-- relogin tips -->
+    <van-dialog
+      use-slot
+      title="请登录"
+      show="{{ showRelogin }}"
+      showConfirmButton="{{false}}"
+      width="280px"
+    >
+      <!-- <view class="relogin">
+        <button class="btn confirm" bindtap="login" disabled="{{disabled}}">登录</button>
+      </view> -->
+    </van-dialog>
+
+   <van-dialog id="van-dialog" />
+
+   <van-toast id="van-toast" />
+</view>
+

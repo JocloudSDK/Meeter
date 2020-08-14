@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "navigation": "/components/navigation/index",
+    "tabbar": "/components/tabbar/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "loading": "/components/loading/index"
+  }
+}

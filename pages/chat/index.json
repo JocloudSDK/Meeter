@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "chat-dialog": "/components/chat-dialog/index"
+  }
+}

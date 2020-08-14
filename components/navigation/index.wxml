@@ -1,0 +1,15 @@
+<!--components/navigation/index.wxml-->
+
+<view
+  class="navigation"
+  style="padding-top:{{statusBarHeight}}px;height:{{navHeight}}px">
+  
+  <view wx:if="{{ showBack }}" class="nav-back" id="drawID" style="height: {{model.height}}px!important; width: {{model.height}}px!important;" bindtap="onPressBack">
+    <image class="nav-icon" src="/images/nav_icon_black.png"></image>
+  </view>
+
+  <view class="nav-title" style="color: black;line-height:{{navHeight - statusBarHeight}}px">
+    {{'聚联云Meeter' || title}}
+  </view>
+</view>
+

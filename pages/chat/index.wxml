@@ -1,0 +1,33 @@
+<!--pages/chat/index.wxml-->
+<layout
+  activeBar="PRIVATE_CHAT">
+  
+  <view class="chat page">
+    <view class="uid">UID: {{ownerUid}}</view>
+
+    <view class="chat-list" wx:if="{{chatList && chatList.length}}">
+      <block wx:for="{{chatList}}" wx:key="index" >
+        <view class="item" bindtap="tochat" data-item="{{item}}">
+          <image class="avator" src="/images/avator.jpg"></image>
+          <view class="ctx">
+            <view class="info">
+              <view class="nick">{{item.tag}}: {{item.fromUid}}</view>
+              <view class="time">{{item.time}}</view>
+            </view>
+            <view class="msg">{{item.content}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:else class="no-data">暂未数据！</view>
+
+    <view class="private-btn" bindtap="tochat" style="bottom: {{isX ? '180' : '130'}}rpx">发起私聊</view>
+
+    <chat-dialog show="{{show}}" bindsendchatmessage="sendMessage" receiver="{{receiver}}" bindsendnullchatmessage="clearMessage"></chat-dialog>
+
+  </view>
+
+  <van-notify id="van-notify" />
+
+  <van-toast id="van-toast" zIndex="9999"/>
+</layout>

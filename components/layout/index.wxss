@@ -1,0 +1,45 @@
+/* components/yy-layout/index.wxss */
+.wechat-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.auth {
+  padding: 40rpx;
+  background: #4179e0;
+  color: #fff;
+  text-align: center;
+}
+.auth .content {
+  padding: 70rpx 0;
+  font-size: 36rpx;
+}
+.auth .btn:after {
+  border: none;
+}
+.auth .btn {
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  width: 70%;
+}
+.auth .cancle {
+  background: #4179e0;
+  border: none;
+  color: #fff;
+  font-size: 20rpx
+}
+.auth .confirm {
+  color: #4179e0;
+}
+.relogin .btn {
+  background-color: #4179e0;
+  color: #fff;
+  width: 80%;
+  text-align: center;
+  margin: 80rpx auto 60rpx;
+}
+.relogin .btn:after {
+  border-color: #4179e0;
+}

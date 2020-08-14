@@ -1,0 +1,43 @@
+/* pages/members/index.wxss */
+.online .numbers {
+  text-align: right;
+}
+.member-list {
+  padding: 24rpx 0;
+}
+.member-list .item {
+  height: 90rpx;
+  display: flex;
+  align-content: center;
+  position: relative;
+  padding: 12rpx 0;
+}
+.member-list .isOwner {
+  color: orange;
+}
+.member-list .item:after {
+  position: absolute;
+  content: '';
+  height: 1rpx;
+  width: 100%;
+  background: #dcdcdc;
+  transform: scaleY(0.5);
+  bottom: 0;
+}
+.member-list .item:last-child:after {
+  height: 0;
+}
+.member-list .avator {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+.member-list .nick {
+  flex: 1;
+  margin-left: 24rpx;
+  line-height: 90rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+}

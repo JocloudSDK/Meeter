@@ -1,0 +1,13 @@
+/* components/footer/index.wxss */
+.footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: #aaa;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 120rpx;
+}

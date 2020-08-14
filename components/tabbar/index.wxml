@@ -1,0 +1,12 @@
+<!--components/tabbar/index.wxml-->
+<van-tabbar active="{{ active }}" bind:change="onChange" active-color="{{$state.theme}}">
+
+  <block wx:for="{{ tabbars }}" wx:key="index">
+    <van-tabbar-item
+      icon="{{item.icon}}"
+      name="{{item.key}}">
+      {{item.value}}
+    </van-tabbar-item>
+  </block>
+
+</van-tabbar>

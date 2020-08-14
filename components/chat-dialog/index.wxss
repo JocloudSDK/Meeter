@@ -1,0 +1,48 @@
+/* components/chat-dialog/index.wxss */
+.chat {
+  padding: 28rpx;
+}
+.chat .label {
+  display: flex;
+}
+.chat .label .title {
+  width: 200rpx;
+}
+.chat .label {
+  padding: 24rpx 0;
+  position: relative;
+}
+.chat .label .textarea {
+  height: 200rpx;
+  flex: 1;
+  margin-right: 50rpx;
+}
+.chat .label .uid-input {
+  flex: 1;
+  margin-right: 50rpx;
+}
+.mini-icon {
+  position: absolute;
+  right: 0;
+  font-size: 40rpx;
+}
+.footer {
+  display: flex;
+}
+.footer .btn {
+  flex: 1;
+  border: none;
+  background: #fff;
+  font-size: 28rpx;
+  margin: 0 30rpx 20rpx;
+}
+.footer .btn:after {
+  border: none;
+}
+.footer .btn.cancel {
+  color: #333;
+}
+.footer .btn.confirm {
+  color: #fff;
+  background: #0049FF;
+}

@@ -1,0 +1,195 @@
+/* pages/room/index.wxss */
+
+.infos {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.infos .item {
+  text-align: center;
+}
+.infos .empty {
+  width: 100rpx;
+}
+.infos .online-numbers {
+  text-align: right;
+  width: 100rpx;
+}
+.infos .roomId {
+  flex: 1;
+  color: orange;
+}
+.room {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  overflow: hidden;
+}
+.footer {
+  position: absolute;
+  bottom: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28rpx;
+  left: 0;
+  right: 0;
+  z-index: 4;
+}
+.footer .keyword {
+  width: 200rpx;
+  padding: 20rpx 0;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #fff;
+  position: relative;
+}
+.keyinput {
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.footer .setting {
+  display: flex;
+}
+.footer .setting .btn {
+  flex: 1;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  border: 2px solid rgb(68, 189, 226);
+  text-align: center;
+  line-height: 70rpx;
+  margin: 0 12rpx;
+}
+.btn image {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.btn .feedback {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  padding: 0;
+}
+.player {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 80rpx;
+  bottom: 0;
+  background: rgb(0,0,0);
+  color: #ccc;
+  overflow: hidden;
+}
+.player .owneruid {
+  position: relative;
+  padding: 24rpx 0 0 24rpx;
+  color: #fff;
+  z-index: 6;
+}
+.message-box {
+  position: absolute;
+  max-height: 390rpx;
+  overflow-y: scroll;
+  width: 500rpx;
+  color: #fff;
+  bottom: 260rpx;
+  left: 28rpx;
+  font-size: 28rpx;
+  z-index: 6!important;
+}
+.message-box::-webkit-scrollbar { 
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.message-box {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.ms-item .it {
+  padding: 6rpx 12rpx;
+  background: rgba(0,0,0, .1);
+  border-radius: 10rpx;
+  margin: 10rpx 0;
+  display: inline-block;
+}
+.ms-item .nick {
+  color: #ccc;
+}
+.ms-item .official {
+  color: #0049FF;
+}
+.ms-item .me {
+  color: orange;
+}
+.online {
+  padding: 28rpx;
+  color: #333;
+}
+.online .title {
+  text-align: center;
+  margin-bottom: 12rpx;
+}
+.online .list .m-item {
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+}
+.online .list .avator {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 24rpx;
+  border-radius: 50%;
+}
+.online .list .m-info {
+  flex: 1;
+  line-height: 40rpx;
+}
+.online .list .m-info.owner {
+  color: #0049FF;
+}
+.online .list .m-info.me {
+  color: orange;
+}
+.sendMessage {
+  position: fixed;
+  top: -110rpx;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 35rpx 30rpx;
+  background: #F8F8F8;
+  z-index: 1000;
+ }
+ .sendMessage .send_input {
+  margin-top: 4rpx;
+  flex: 1;
+  font-size: 28rpx;
+  color: #050505;
+  max-height: 160rpx!important;
+  min-height: 60rpx!important;
+  height: inherit;
+}
+.sendMessage .send_btn {
+  margin-left: 40rpx;
+  width: 120rpx;
+  height: 60rpx;
+  text-align: center;
+  font-size: 24rpx;
+  background: #0049FF;
+  color: #fff;
+}

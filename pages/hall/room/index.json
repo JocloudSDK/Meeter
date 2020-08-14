@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-popup": "@vant/weapp/popup/index",
+    "liver": "/components/liver/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

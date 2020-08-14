@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/hall/index",
+    "pages/logs/logs",
+    "pages/hall/room/index",
+    "pages/members/index",
+    "pages/chat/index",
+    "pages/feedback/index"
+  ],
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "layout": "/components/layout/index"
+  },
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

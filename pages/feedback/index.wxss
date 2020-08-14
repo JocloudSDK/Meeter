@@ -1,0 +1,21 @@
+/* pages/feedback/index.wxss */
+.feedback .title{
+  padding: 24rpx 0;
+}
+.feedback textarea {
+  max-height: 300rpx;
+  min-height: 100rpx;
+  height: auto;
+  width: auto;
+  padding: 24rpx;
+  background: #f8f8f8;
+}
+.feedback input {
+  padding: 24rpx;
+  background: #f8f8f8;
+}
+.confirmButton {
+  margin-top: 60rpx;
+  background: #0049FF;
+  color: #fff;
+}

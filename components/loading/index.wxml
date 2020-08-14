@@ -1,0 +1,12 @@
+<!--components/loading/index.wxml-->
+<van-overlay show="{{ show }}">
+  <view class="loading">
+    <block wx:if="{{direction == 'vertical'}}">
+      <van-loading color="#fff" type="spinner" vertical >{{loadingText}}</van-loading>
+    </block>
+    <block wx:else>
+      <van-loading color="#fff" type="spinner" >{{loadingText}}</van-loading>
+    </block>
+    
+  </view>
+</van-overlay>

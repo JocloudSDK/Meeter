@@ -1,0 +1,31 @@
+<!--pages/login/index.wxml-->
+<layout
+  title="登录">
+
+  <view class="login">
+
+    <van-field
+      value="{{ uid }}"
+      label="UID"
+      clearable
+      type="digit"
+      placeholder="请输入UID"
+      bind:change="onChange"
+      border="{{ false }}"/>
+
+
+    <van-button
+      class="login-btn"
+      type="info"
+      disabled="{{uid === null || uid === ''}}"
+      bindtap="login">
+      登录
+    </van-button>
+
+    <view class="version"></view>
+  </view>
+  
+</layout>
+
+
+  

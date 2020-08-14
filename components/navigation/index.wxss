@@ -1,0 +1,31 @@
+/* components/navigation/index.wxss */
+.navigation {
+  position: fixed;
+  box-sizing: border-box;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 99999;
+  background: #fff;
+}
+.nav-title {
+  text-align: center;
+  white-space: nowrap;
+  font-size: 36rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nav-icon {
+  height: 60%;
+  width: 60%;
+  margin-left: 20rpx;
+}
+.nav-back {
+  /* position: absolute;
+  left: 28rpx;
+  top: 32px; */
+  margin-left: 20rpx;
+}

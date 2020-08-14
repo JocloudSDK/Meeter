@@ -1,0 +1,31 @@
+<!--pages/feedback/index.wxml-->
+<layout
+  showBack="{{ true }}"
+  showTabbar="{{false}}">
+  <view class="page feedback">
+    <view class="feedbackText">
+      <view class="title">请输入反馈内容</view>
+      <textarea 
+        placeholder='输入反馈内容'
+        bindinput="onInputFeedback" 
+        bindconfirm="onInputFeedback"
+        bindblur="onInputFeedback"
+        value="{{feedbackText}}">
+        </textarea>
+
+
+    </view>
+
+    <view class="feedbackText">
+      <view class="title">联系方式</view>
+      <input
+      placeholder="选填"
+      value="{{tel}}"
+      bindinput="onInputTel" ></input>
+    </view>
+
+    <button class="confirmButton" bindtap="onFeedback">提交反馈</button>
+  </view>
+  
+  <van-toast id="van-toast" />
+</layout>

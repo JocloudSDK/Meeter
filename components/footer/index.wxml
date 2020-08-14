@@ -1,0 +1,5 @@
+<!--components/footer/index.wxml-->
+<view class="footer" style="bottom: {{isX ? '164' : '120'}}rpx">
+  <text>Meeter V1.0.1 TB 1.0.1 RTS 3.2.1</text>
+  <text>聚联云Jocloud会议场景解决方案</text>
+</view>

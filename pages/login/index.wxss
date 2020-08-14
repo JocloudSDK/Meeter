@@ -1,0 +1,6 @@
+/* pages/login/index.wxss */
+
+.login-btn button {
+  margin-top: 48rpx;
+  width: 100%!important;
+}
